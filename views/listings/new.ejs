@@ -1,0 +1,82 @@
+<%- layout("layouts/boilerplate")%>
+
+<div class="container">
+    <div class="row justify-content-center mt-5" >
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5">
+            <form action="/listings" method="post" novalidate class="needs-validation" enctype="multipart/form-data">
+                <div class="mb-3">
+                    <label for="title" class="form-label">Title</label>
+                    <input type="text" name="listing[title]" placeholder="Enter the title" id="title" required class="form-control">
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">Please enter a title.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label">description</label>
+                    <textarea name="listing[description]"  placeholder="Enter description" id="description" rows="3" cols="3" class="form-control" required></textarea>
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">Please enter a description.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="image" class="form-label">Upload Listing image</label>
+                    <input type="file" id="image" name="listing[image]" accept="image/png, image/jpeg, image/jpg" class="form-control" required>
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">Please upload an image.</div>
+                </div>
+                
+                <div class="mb-3">
+                    <label for="price" class="form-label">price</label>
+                    <input type="number" id="price" name="listing[price]" placeholder="Enter the price" required class="form-control">
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">Please enter a price.</div>
+                </div>
+
+                <div class="row gx-0">
+                    <div class="mb-3 col-12 col-sm-12 col-md-6">
+                        <label for="country" class="form-label">country</label>
+                        <input type="text" id="country" name="listing[country]" placeholder="Enter the country" required class="form-control">
+                        <div class="valid-feedback">Looks good!</div>
+                        <div class="invalid-feedback">Please enter a country.</div>
+                    </div>
+                    <div class="mb-3 col-12 col-sm-12 col-md-6">
+                        <label for="location" class="form-label">location</label>
+                        <input type="text" id="location" name="listing[location]" placeholder="Enter the location" required class="form-control">
+                        <div class="valid-feedback">Looks good!</div>
+                        <div class="invalid-feedback">Please enter a location.</div>
+                    </div>
+                </div>
+                <div class="d-grid">
+                    <button class="btn btn-dark mb-4 add-btn">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+
+    
+
+<script>
+const imageInput = document.getElementById('image');
+const MAX_SIZE = 5 * 1024 * 1024; 
+
+imageInput.addEventListener('change', (e) => {
+  const file = e.target.files[0];
+  
+  if (!file) return;
+  
+  if (file.size > MAX_SIZE) {
+    alert('File size must be less than 5 MB');
+    imageInput.value = '';
+    return;
+  }
+  
+  const allowedTypes = ['image/png', 'image/jpeg', 'image/jpg'];
+  if (!allowedTypes.includes(file.type)) {
+    alert('Only PNG, JPEG, JPG allowed');
+    imageInput.value = '';
+    return;
+  }
+  
+});
+</script>

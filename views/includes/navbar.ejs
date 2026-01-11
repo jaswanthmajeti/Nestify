@@ -1,0 +1,26 @@
+<nav class="navbar navbar-expand-md bg-light border-bottom sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/listings"><i class="fa-solid fa-compass"></i> Nestify</a>
+      <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"  aria-controls="navbarNavAltMarkup" aria-expanded="false"
+      aria-label="Toggle navigation" >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <% if(showSearchbox){ %>
+            <form class="d-flex search-box ms-auto" role="search" action="/listings/search" autocomplete="off">
+              <input class="form-control me-2" type="search" placeholder="Search destination" aria-label="Search" name="destination"/>
+              <button class="btn" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+        <% } %> 
+        <div class="navbar-nav ms-auto">
+            <a class="nav-link" href="/listings/new">Create Listing</a>
+            <% if(currUser){ %>
+              <a class="nav-link" href="/logout">Logout</a>
+            <% } else{ %>
+              <a class="nav-link fw-semibold"  href="/signup">Sign Up</a>
+              <a class="nav-link fw-semibold" href="/login">Login</a>
+            <% } %>
+        </div>
+      </div>
+    </div>
+  </nav> 

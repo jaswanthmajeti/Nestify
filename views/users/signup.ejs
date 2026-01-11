@@ -1,0 +1,40 @@
+<%- layout("layouts/boilerplate")%>
+
+<div class="container">
+    <div class="row justify-content-center mt-5" >
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5">
+            <h2 class="text-center mb-4">SignUp</h2>
+            <form action="/signup" method="post" novalidate class="needs-validation">
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" name="user[email]" placeholder="Enter your emailId" id="email" required class="form-control">
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">Please enter your eamilId.</div>
+                </div>
+                <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" name="user[username]"  placeholder="Enter username" id="username" class="form-control"  minlength="3" required>
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">Please enter username (minimum length: 3 characters)</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" name="user[password]"  placeholder="Enter password" id="password" class="form-control" required minlength="8"></input>
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">Please enter a valid password (minimum length: 8 characters)</div>
+                </div>
+
+
+            
+                <div class="d-grid">
+                    <button class="btn btn-dark add-btn">Sign Up</button>
+                </div>
+                <p class="text-center mt-4">Already have an account: <a href="/login">Click here</a></p>
+            </form>
+        </div>
+    </div>
+
+
+</div>
+    
