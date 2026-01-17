@@ -1,0 +1,51 @@
+
+<%- layout("layouts/boilerplate")%>
+
+<div class="container">
+    <div class="row justify-content-center mt-5" >
+        <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5">
+            <form action="/<%=user._id%>?_method=put" method="post" novalidate class="needs-validation" enctype="multipart/form-data">
+                
+                <div class="mb-3">
+                    <label for="username" class="form-label">Enter new username: </label>
+                    <input type="text" id="username" name="user[username]" value="<%=user.username%>" required class="form-control">
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">Please enter a valid username.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Enter new email</label>
+                    <input type="email" id="email" name="user[email]" value="<%=user.email%>" required class="form-control">
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">Please enter a valid email.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="password" class="form-label">Enter New password:</label>
+                    <input type="password" id="password" name="user[password]" minlength="8" placeholder="Enter new password" class="form-control">
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">Please enter a valid password.</div>
+                </div>
+
+                <div class="mb-3">
+                    <p>Profile pic: </p>
+                    <img src="<%= user.profilePic%>" height="100px" width="100px">
+                </div>
+
+                <div class="mb-3">
+                    <label for="image" class="form-label">Upload Profile pic</label>
+                    <input type="file" id="image" name="user[profilePic]"  class="form-control">
+                </div>
+                
+                    <div class="d-grid">
+                        <button class="btn btn-dark mb-5 add-btn"> Update </button>
+                    </div>
+            </form>
+        </div>
+    </div>
+
+
+
+</div>
+
+   

@@ -28,3 +28,11 @@ module.exports.userSchema = Joi.object({
         password: Joi.string().trim().min(8).required(),
     }).required()
 });
+
+module.exports.updateUserSchema = Joi.object({
+    user:Joi.object({
+        username: Joi.string().trim().min(3).required(),
+        email: Joi.string().trim().required().email(),
+        password: Joi.string().trim().min(8).allow('').optional(),
+    }).required()
+});
