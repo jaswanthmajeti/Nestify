@@ -23,16 +23,16 @@ A full-stack web application with user authentication, property listings, review
 ## 📁 Project Structure
 
 ```
-├── models/          # Mongoose schemas (User, Listing, Review, Booking)
-├── routes/          # Express route handlers
-├── controllers/     # Business logic & request handling
-├── views/           # EJS templates (forms, listings, reviews)
-├── public/          # Static assets (CSS, JS, images)
-├── middleware.js    # Auth middleware, validation, error handling
-├── cloudConfig.js   # Cloudinary file upload config
-├── schema.js        # Joi validation schemas
-├── app.js           # Express app setup & middleware initialization
-└── package.json     # Dependencies
+├── models/          
+├── routes/          
+├── controllers/     
+├── views/           
+├── public/          
+├── middleware.js    
+├── cloudConfig.js   
+├── schema.js        
+├── app.js           
+└── package.json     
 ```
 
 ## 🚀 Quick Start (Local Development)
